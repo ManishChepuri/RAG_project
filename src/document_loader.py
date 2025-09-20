@@ -1,0 +1,1 @@
+# Extract text from PDFs, Word docs, etc.

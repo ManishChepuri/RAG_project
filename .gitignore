@@ -1,0 +1,24 @@
+# Virtual environment
+rag_project_env/
+venv/
+env/
+
+# Environment variables (API keys)
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Data files (large embeddings)
+data/embeddings/
+data/chunks/
+logs/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE files
+.vscode/
+.idea/
