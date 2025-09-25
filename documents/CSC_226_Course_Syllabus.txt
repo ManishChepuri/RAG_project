@@ -1,0 +1,504 @@
+﻿CSC 226 Course Syllabus (Fall 2025)
+CSC 226 Course Syllabus (Fall 2025)
+Discrete Mathematics
+Table of Contents
+CSC 226 Course Syllabus (Fall 2025)
+INSTRUCTOR INFORMATION
+Office Hours
+Preferred Method of Communication
+Response Time
+COURSE INFORMATION
+Meeting Time
+Prerequisites/Corequisites
+COURSE OVERVIEW
+Catalog Description
+Structure
+COURSE OUTCOMES
+COURSE MATERIALS
+Required Textbook
+Optional Materials
+TECHNOLOGY REQUIREMENTS
+Hardware
+Software
+Minimum Computer and Digital Literacy Skills
+NETIQUETTE
+GRADING
+Grading Policy
+Minimum Grade Requirement
+Grading Scale
+COURSE SCHEDULE
+COURSE POLICIES
+Late Assignments
+Incomplete Grades
+Attendance and Participation
+Exam Policy
+Calculator Policy
+UNIVERSITY POLICIES
+Academic Integrity and Honesty
+Back to TOC Page 1 of 12 Last updated: August 15, 2025CSC 226 Course Syllabus (Fall 2025)
+Student Services
+Accessing University Resources
+Disability Resources
+Trans-Inclusive Statement
+Basic Needs Security
+COURSE EVALUATIONS
+SYLLABUS MODIFICATION STATEMENT
+INSTRUCTOR INFORMATION
+Name Section Email Office Location
+Dr. Jessica Young Schmidt 001 & 002 jessica
+_
+schmidt@ncsu.edu 111 Lampe Drive 242D
+Dr. Abida Haque 003 ahaque3@ncsu.edu 111 Lampe Drive 242A
+Office Hours
+All CSC 226 office hours are listed in this calendar: https://go.ncsu.edu/CSC226-office-hours.
+My Digital Hand (MDH) is used for all office hours: https://go.ncsu.edu/mdh-CSC226.
+Preferred Method of Communication
+While email addresses are provided for completeness, please use Ed Discussion for all course-related
+correspondence. This is to ensure that we can provide timely, high quality responses! Do NOT send
+private messages to a single member of the teaching staff via email or on Ed Discussion as the response
+may be delayed.
+Response Time
+Please note that a member of the teaching staff will respond to messages on Ed Discussion within 24
+hours on a business day and within 48 hours on a weekend or holiday. Most of the time, we will respond
+more quickly, but it is not guaranteed. If you send an email, your response time could be days or weeks.
+Use Ed Discussion.
+Back to TOC Page 2 of 12 Last updated: August 15, 2025CSC 226 Course Syllabus (Fall 2025)
+COURSE INFORMATION
+Course Website: https://go.ncsu.edu/CSC226-moodle
+Course Credit Hours: 3
+Meeting Time
+●
+●
+●
+001 (Schmidt): Mondays and Wednesdays 10:15am-11:30am in 434 111 Lampe Drive
+002 (Schmidt): Mondays and Wednesdays 11:45am-1:00pm in 434 111 Lampe Drive
+003 (Haque): Mondays and Wednesdays 4:30pm-5:45pm in 1025 Engineering Building 2
+Prerequisites/Corequisites
+None
+COURSE OVERVIEW
+Catalog Description
+Emphasis on counting (combinatorics), formal proofs, and applications of discrete mathematics. Topics
+will include (but are not limited to): permutations, combinations, probability, propositional logic, predicate
+calculus, proof approaches, induction, modular arithmetic, recurrence relations, asymptotic growth of
+functions, and introduction to graph theory. This course assumes knowledge of topics covered in
+high-school Algebra I and II.
+Structure
+●
+●
+●
+●
+●
+The course meets in person for two 75 minute sessions per week. Attendance will be taken.
+Prior to in person sessions, students will complete online learning activities.
+This course delivers all learning materials, activities, and assignments through Moodle.
+A significant amount of work will be required outside of class hours doing homework and lab
+assignments. These will be submitted through a variety of online learning tools, including but not
+limited to Gradescope, and WeBWork.
+There will be two exams delivered in class during the semester and one cumulative final exam.
+Back to TOC Page 3 of 12 Last updated: August 15, 2025CSC 226 Course Syllabus (Fall 2025)
+COURSE OUTCOMES
+At the conclusion of this course, students should be able to:
+1. Describe permutations and combinations, and explain the differences between them.
+2. Identify and apply the appropriate counting approach for solving a given problem.
+3. Apply common arithmetic and logic proof techniques to prove that a given argument is valid.
+4. Apply modular arithmetic to prove properties of subsets of the integers.
+5. Use the principle of strong mathematical induction to prove properties over the natural numbers.
+6. Determine and prove the correctness of asymptotic function growth using standard notations.
+7. Identify properties (e.g., trails, circuits, paths, or cycles) of a given graph.
+8. Apply common algorithms (e.g., graph search algorithms, minimum spanning tree algorithms) to a
+given graph.
+COURSE MATERIALS
+Required Textbook
+CSC 226: Discrete Mathematics - zyBooks.com
+Cost: $64
+This textbook is required.
+Course Ready link is in Moodle. Otherwise, to access CSC 226 zyBooks:
+1. Sign in or create an account at learn.zybooks.com
+2. Enter zyBook code: NCSUCSC226Fall2025
+3. Subscribe
+A subscription is $64. The cutoff to subscribe is November 25, 2025. Subscriptions will last until
+December 24, 2025.
+Optional Materials
+Some students might be interested in the following free textbook: Book of Proof.
+TECHNOLOGY REQUIREMENTS
+Hardware
+NC State’s Office of Information Technology provides technology requirements and recommendations for
+computer hardware.
+Software
+●
+Moodle and Wolfware
+○
+○
+○
+Moodle Accessibility Statement
+Moodle Privacy Policy
+NC State Privacy Policy
+Back to TOC Page 4 of 12 Last updated: August 15, 2025CSC 226 Course Syllabus (Fall 2025)
+●
+●
+●
+●
+Adobe Reader (for reading PDF files)
+○
+Adobe Accessibility Statement
+○
+Adobe Privacy Policy
+Zoom (for online office hours)
+○
+Zoom Accessibility Statement
+○
+Zoom Privacy Policy
+Gradescope
+○
+Gradescope Privacy Policy
+○
+Gradescope Accessibility Standards
+WeBWork
+●
+●
+●
+●
+●
+●
+●
+●
+○
+WeBWork Privacy Policy
+○
+WeBWork Accessibility
+PlayPosit (for lecture/video capture and viewing)
+○
+PlayPosit Accessibility
+○
+PlayPosit Privacy Policy
+Panopto (for lecture/video capture and viewing)
+○
+Panopto Accessibility Features
+○
+Panopto Privacy Policy
+Google (for communication, collaboration, and more)
+○
+Google Accessibility Statement
+○
+Google Privacy Policy
+Ed Discussion (for message board)
+Join link for Spring 2025: https://edstem.org/us/join/ZXUJEB
+Ed Discussion Accessibility
+Ed Discussion Privacy Policy
+My Digital Hand (MDH) (for office hours)
+NCSU GitHub (for CSC 226 Website)
+○
+Privacy Statement
+○
+Managing accessibility settings
+zyBooks (for textbook)
+○
+Privacy Policy
+○
+Accessibility
+Tutor Systems (for Labs)
+○
+Links will be provided during the semester.
+○
+○
+○
+Minimum Computer and Digital Literacy Skills
+●
+●
+●
+●
+●
+●
+Obtain regular access to a reliable internet connection
+Proficient typing and word processing skills (MS Word, text editors, Google Docs)
+Ability to use online communication tools, such as email (create, send, receive, reply, print,
+send/receive attachments), discussion boards (read, search, post, reply, follow threads), chats,
+and messengers.
+Download and upload attachments
+Knowledge of copy/paste and use of spell check
+Use computer networks to locate and store files or data
+Back to TOC Page 5 of 12 Last updated: August 15, 2025CSC 226 Course Syllabus (Fall 2025)
+NETIQUETTE
+Students are expected to behave professionally and respectfully at all times, in class, on campus, online,
+and in course feedback surveys and student evaluations. That means there is to be no offensive
+language, no threats, and absolutely no discussion/hints/threats of violence. Disrespectful language will
+not be tolerated and will be reported to Campus Police if the instructor deems that such language may be
+harmful to the psychological well-being of others or represents a need for assistance by the offending
+student.
+Students should be aware that their behavior impacts other people, even online. We hope that we will all
+strive to develop a positive and supportive environment and will be courteous to fellow students and your
+instructor. Due to the nature of the online environment, there are some things to remember when taking
+an online course and engaging with others.
+GRADING
+Grading Policy
+Component Weight Details
+Homeworks 27% Six homework assignments to be completed via WeBWorK.
+Labs 9% Two Labs are linked through Moodle. Each lab should be completed by the assigned
+deadline; no late submissions for any reason. All problems assigned should be worked
+until all problems are correct. There is no penalty for reworking any portion of any
+lab/tutorial.
+PlayPosit
+Videos
+10% PlayPosit videos and activities should be completed before each class period. No
+submissions will be accepted after Reading Day (4/23).
+Exams 54% Two 75 minute exams will be administered during class time. The final exam will be
+cumulative and will cover all course topics.
+●
+●
+●
+Exam 1 (17%)
+Exam 2 (17%)
+Final Exam (20%)
+○
+001 (Schmidt): December 8 8:30am-11:00am in 434 111 Lampe Drive
+○
+002 (Schmidt): December 5 12:00pm-2:30pm in 434 111 Lampe Drive
+○
+003 (Haque): December 5 3:30pm-6:00pm in 1025 Engineering Building 2
+Minimum Grade Requirement
+In order to be eligible to receive a semester grade of C- or higher, you must have a weighted average of
+60% or higher on the exams. Students failing to meet these requirements will receive a maximum grade
+of D in the course.
+Note: You will need a C or better (X >= 73) to continue to CSC316.
+Back to TOC Page 6 of 12 Last updated: August 15, 2025CSC 226 Course Syllabus (Fall 2025)
+Grading Scale
+This course uses this grading scale:
+Low Letter High
+97 ≤ A+ ≤ 100
+93 ≤ A <
+97
+90 ≤ A- <
+93
+87 ≤ B+ <
+90
+83 ≤ B <
+87
+80 ≤ B- <
+83
+77 ≤ C+ <
+80
+73 ≤ C <
+77
+70 ≤ C- <
+73
+67 ≤ D+ <
+70
+63 ≤ D <
+67
+60 ≤ D- <
+63
+0 ≤ F <
+60
+COURSE SCHEDULE
+Course schedule for each section can be found on the course site:
+●
+001 (Schmidt)
+●
+002 (Schmidt)
+●
+003 (Haque)
+During the last week of classes, Homework 6 is due.
+Please note: course schedule is subject to change.
+COURSE POLICIES
+Late Assignments
+To alleviate pressure and possible conflicts with other commitments, students may request at most 2
+penalty-free extensions on WeBWorK homeworks per semester. Each extension will be of at most 3 days
+and cannot go beyond the date of the exam for which the homework applies. For example, if Homework A
+were due 9/20, the extension would be until 9/23 with no submissions allowed after that date. Late
+Back to TOC Page 7 of 12 Last updated: August 15, 2025CSC 226 Course Syllabus (Fall 2025)
+assignment requests must be submitted via the Google Form available on Moodle. Only extension
+requests received within 24 hours of the original assignment deadline will be considered.
+No late submissions will be allowed for labs.
+Incomplete Grades
+If an incomplete grade is authorized by the instructor, the instructor will prepare a contract that outlines
+the assignments already completed, the assignments that need to be completed to resolve the
+incomplete, and the deadlines/timeline for the completion of these assignments. The student must sign
+and return the contract to the instructor no later than noon on the day course grades are due for the
+semester. No additional extensions will be granted beyond the updated deadlines outlined on the contract
+prepared by the instructor. An incomplete is potentially appropriate only when missing a few assignments,
+not for missing half the semester or missing a significant number of assignments. An incomplete will be
+considered only if the student is currently meeting minimum grade requirements.
+The university policy on incomplete grades is located at http://policies.ncsu.edu/regulation/reg-02-50-3.
+An unfinished incomplete grade will automatically change to an F after either (a) the end of the next
+regular semester in which the student is enrolled (not including summer sessions), or (b) the end of 12
+months if the student is not enrolled, whichever is shorter. Incompletes that change to F will count as an
+attempted course on transcripts. The burden of fulfilling an incomplete grade is the responsibility of the
+student.
+Attendance and Participation
+Attendance is required and will be taken in class using Moodle. If you miss more than 15 minutes of class,
+you will be considered absent. Attendance may be taken multiple times during a class period. If you do
+not mark yourself as present during class, you will be marked absent. You are expected to participate in
+class.
+If you are unable to attend a class for any reason, there is no need to contact the instructor. You can
+access course materials in Moodle. The only exception is for exam days. There are two in-class exams
+and a final exam for this class.
+Makeups for Exam 1 and Exam 2 will only be given for:
+1. anticipated excused absences on exam days that are presented to the instructor no later than
+one week before the absence as makeup exam will be scheduled prior to original exam date.
+Examples include student is away from campus representing an official university function where
+documentation from University faculty or staff member is presented to instructor, religious
+observances as verified by the Division of Academic and Student Affairs, and required military
+duty as certified by the student’s commanding officer.
+2. unanticipated excused absences that are verified by Absence Verification (e.g., deaths, legal
+obligations, military duty, and serious illnesses like surgery and hospitalizations) within one week
+of the exam period as makeup exams must be taken within a week of original exam date.
+For students who miss Exam 1 and/or Exam 2 for any other reason (unexcused absences or
+unanticipated excused absences not verified by Absence Verification), then the portion of the Final Exam
+Back to TOC Page 8 of 12 Last updated: August 15, 2025CSC 226 Course Syllabus (Fall 2025)
+that covers missed exam will count for the missed exam; for example, if a student misses Exam 1 and
+scores 90 on the Exam 1 portion of the Final Exam, then their Exam 1 score would be 90.
+For the Final Exam, all anticipated excused absences on assigned Final Exam days must be presented to
+the instructor no later than one week before the absence. Exam makeups for anticipated excused
+absences must be completed before the original exam time (before the absence instead of after returning
+from the absence). For unanticipated Final Exam absences the student must provide written
+documentation of an excused absence to the instructor before grades are due for the semester, then the
+student’s course grade will be recorded as IN (incomplete), and the student will need to complete the final
+exam within 1 week of returning from the absence. For unexcused absence during Final Exam period,
+Final Exam grade will be recorded as a 0.
+Final exam reschedule requests (due to other exam conflicts) must be approved by the university and
+communicated with the instructor at least 1 week before the scheduled final exam start time. If you have a
+conflict with your final exam schedule (e.g., three or more consecutively scheduled final examinations
+within any 24-hour period), you can access the Exam Reschedule tool in MyPack by navigating through
+the Planning & Enrollment tile.
+For complete attendance and excused absence policies, please see
+https://policies.ncsu.edu/regulation/reg-02-20-03-attendance-regulations/.
+Withdrawal Process: https://studentservices.ncsu.edu/your-classes/withdrawal/process/
+Exam Policy
+You will have the opportunity to improve your Exam 1 and Exam 2 grades during the Final Exam. The
+final exam will be cumulative and cover materials from the whole semester. The Final Exam will have
+three categories of question:
+●
+Category 1 questions cover materials from Exam 1 (Unit 1)
+●
+Category 2 questions cover materials from Exam 2 (Unit 2)
+●
+Category 3 questions cover materials covered between Exam 2 and the end of the semester (Unit
+3)
+If your score for Final Exam Category 1 questions is higher than your original Exam 1 grade, we will
+replace your Exam 1 grade with your score from Category 1 questions. If your score for Final Exam
+Category 2 questions is higher than your original Exam 2 grade, we will replace your Exam 2 grade with
+your score from Category 2 questions.
+Calculator Policy
+Calculators are not permitted for CSC226 Exams.
+UNIVERSITY POLICIES
+Academic Integrity and Honesty
+Students are required to comply with the university policy on academic integrity found in the Code of
+Student Conduct. In general, any action that attempts (successfully or not) to give you or another student
+Back to TOC Page 9 of 12 Last updated: August 15, 2025CSC 226 Course Syllabus (Fall 2025)
+an unfair advantage over other students when it comes to grading constitutes an academic integrity
+violation. Therefore, students are required to uphold the university pledge of honor and exercise honesty
+in completing any assignment.
+Please refer to the Academic Integrity web page for a detailed explanation of the University’s policies on
+academic integrity and some of the common understandings related to those policies.
+To avoid conviction for academic integrity violations you must:
+●
+●
+Avoid communicating with other students during an exam.
+Avoid sharing details of homework solutions with any other person via public message board
+posts, email, text, etc.
+●
+Cite all websites, papers, and books used as resources when creating homework solutions and
+explain how these were used (e.g.,
+"we used the Wikipedia article [insert link] on Boolean algebra
+to help me understand basic Boolean operations"); the exception is material linked to from the
+course Ed Discussion site.
+●
+Not use external web sites (such as Chegg and CourseHero) unless you clear it first with the
+instructor; posting questions or accessing such sites to look for answers is a serious violation.
+●
+Not use AI tools or services, like ChatGPT, to generate partial or complete solutions to
+assessments in the class. AI tools and services should not be used as a starting point that the
+student will then edit. The use of these services are prohibited for assessed work in this class.
+●
+Write all homework solutions from scratch using your own words; paraphrases of solutions from
+other sources are unacceptable even if you cite those sources.
+If an academic integrity violation occurs, the offending student(s) will be assessed a penalty that
+is no credit for the course, making the course ineligible for Grade Exclusion under University
+Regulation 02.20.16 (resulting in an F as a final grade on the student's transcript). The case will
+always be reported to the Office of Student Conduct. No exceptions.
+While your deliverable is your work, the assignment artifacts and lecture materials are the intellectual
+property of the instructors and the university. You may not post any assignment artifacts, assignment
+solutions, or lectures to a publicly accessible website or public code repository during or after the
+semester.
+Sharing attendance codes with students who are not in class or submitting attendance codes when not in
+class will be reported to the Office of Student Conduct with the above recommended sanction.
+This course (lab assignments) may involve electronic sharing or posting of personally identifiable student
+work or other information with persons not taking or administering the course. Students will be asked to
+sign a consent form allowing disclosure of their personally identifiable work. No student is required to sign
+the consent form as a condition of taking the course. If a student does not want to sign the consent form,
+he or she has the right to ask the instructor for an alternative, private means of completing the
+coursework.
+Students are responsible for reviewing the NC State University PRR’s which pertains to their course rights
+and responsibilities:
+Student Conduct
+Equal Opportunity and Non-Discrimination Policy Statement and additional references
+●
+●
+●
+●
+●
+●
+Code of Student Conduct
+Grades and Grade Point Average
+Credit-Only Courses
+Audits
+Back to TOC Page 10 of 12 Last updated: August 15, 2025CSC 226 Course Syllabus (Fall 2025)
+Student Services
+Accessing University Resources
+There are additional links to student services available to you in the Student Services block located in the
+block drawer on the right side of the course site. These services include: Academic Support, community,
+health and wellness, basic needs, financial assistance, and other campus resources. To open the block
+drawer, click on the button that looks like an arrowhead on the right side of the main course page. You
+can close the block drawer by clicking on the X.
+Disability Resources
+Reasonable accommodations will be made for students with verifiable disabilities. In order to take
+advantage of available accommodations, students must register with the Disability Resource Office at
+Holmes Hall, Suite 304,Campus Box 7509, 919-515-7653 . For more information on NC State’s policy on
+working with students with disabilities, please see the Academic Accommodations for Students with
+Disabilities Regulation (REG02.20.01)
+Remember, accommodations are not retroactive and may take time to be implemented, so be sure to
+send your letters as early in the semester as possible. Students registered with the Disability Resource
+Office should present their letters of accommodations to the instructor prior to the end of the first week of
+classes. In addition to having a letter sent to the instructor, students should discuss accommodations with
+the instructor.
+For Testing Accommodations, the DRO provides limited proctoring services. As reservations fill quickly,
+students should make exam reservations as soon as possible based on course schedule.
+Contact the instructor to discuss exam accommodations at least seven calendar days before the start
+time of the exam. The instructor may not be able to accommodate requests that are discussed within
+seven days of the exam.
+Trans-Inclusive Statement
+In an effort to affirm and respect the identities of transgender students in the classroom and beyond,
+please contact me if you wish to be referred to using a name and/or pronouns other than what is listed in
+the student directory.
+Basic Needs Security
+Any student who faces challenges securing their food or housing or has other severe adverse
+experiences and believes this may affect their performance in the course is encouraged to notify the
+professor if you are comfortable in doing so. Alternatively, you can contact the Division of Academic and
+Student Affairs to learn more about the Pack Essentials program https://dasa.ncsu.edu/pack-essentials/.
+Back to TOC Page 11 of 12 Last updated: August 15, 2025CSC 226 Course Syllabus (Fall 2025)
+COURSE EVALUATIONS
+ClassEval is the end-of-semester survey for students to evaluate instruction of all university classes. The
+current survey is administered online and includes 12 closed-ended questions and 3 open-ended
+questions. Deans, department heads, and instructors may add a limited number of their own questions to
+these 15 common-core questions.
+Each semester students’ responses are compiled into a ClassEval report for every instructor and class.
+Instructors use the evaluations to improve instruction and include them in their promotion and tenure
+dossiers, while department heads use them in annual reviews. The reports are included in instructors’
+personnel files and are considered confidential.
+Online class evaluations will be available for students to complete during the last two weeks of the
+semester for full semester courses and the last week of shorter sessions. Students will receive an email
+directing them to a website to complete class evaluations. These become unavailable at 8am on the first
+day of finals.
+>
+>
+Contact ClassEval Help Desk: classeval@ncsu.edu
+ClassEval website
+>
+More information about ClassEval
+SYLLABUS MODIFICATION STATEMENT
+The Course Instructors reserve the right to change or add to any of these policies at any time for any
+reason. If such activity occurs, there will be notification through the normal announcement channel for the
+course. Students are responsible for ALL information sent through email (including via Ed Discussion)
+and/or posted to the course Moodle site.
+Not reading your email is not an excuse for not knowing course information.
+Back to TOC Page 12 of 12 Last updated: August 15, 2025

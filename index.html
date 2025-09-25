@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Showcase</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <style>
+    body { margin: 0; font-family: Helvetica, Arial, sans-serif; background: #000; color: #fff; }
+    section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 50px 20px; }
+    h1 { font-size: 4rem; margin: 0; }
+    p { font-size: 1.5rem; max-width: 700px; }
+    .hero { background: url('hero-image.jpg') center/cover no-repeat; color: white; }
+    .hero h1 { font-size: 5rem; text-shadow: 0 4px 20px rgba(0,0,0,0.7); }
+    .cta-btn { margin-top: 20px; padding: 15px 40px; background: #0071e3; border: none; border-radius: 30px; font-size: 1.2rem; color: white; cursor: pointer; }
+    .alt-section { flex-direction: row; justify-content: space-around; align-items: center; text-align: left; }
+    .alt-section img { max-width: 40%; border-radius: 20px; }
+    @media(max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .alt-section { flex-direction: column; text-align: center; }
+      .alt-section img { max-width: 80%; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1 data-aos="fade-up">Introducing ProPhone 17</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Experience innovation redefined. Built for speed, clarity, and power.</p>
+    <button class="cta-btn" data-aos="zoom-in" data-aos-delay="400">Buy Now</button>
+  </section>
+
+  <section class="alt-section" data-aos="fade-left">
+    <img src="phone-side.jpg" alt="Phone side view">
+    <div>
+      <h1>Sleek Design</h1>
+      <p>Engineered with precision, the ProPhone 17 fits seamlessly into your lifestyle.</p>
+    </div>
+  </section>
+
+  <section class="alt-section" data-aos="fade-right">
+    <div>
+      <h1>Unmatched Performance</h1>
+      <p>Powered by the latest chip, experience performance like never before.</p>
+    </div>
+    <img src="chip.jpg" alt="Processor chip">
+  </section>
+
+  <section data-aos="fade-up">
+    <h1>Starting at $999</h1>
+    <p>Pre-order today and be the first to experience the future.</p>
+    <button class="cta-btn">Pre-Order</button>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
