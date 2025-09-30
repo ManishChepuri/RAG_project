@@ -61,4 +61,6 @@ def main():
     save_json(pdf_text, "data/data.json")
     print(type(load_json("data/data.json")))
     
-main()
+
+if __name__ == "__main___":
+    main()
