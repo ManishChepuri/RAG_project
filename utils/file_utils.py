@@ -37,23 +37,24 @@ def load_docx(file_path: str) -> str:
     # Return the text
     return text
 
-def save_json(text: str, file_path: str) -> None:
+def save_json(data, file_path: str) -> None:
     """Save data to JSON file"""
     # Turn all text to a dict
-    text_data = {
-        "text": text
-    }
+    if isinstance(data, str):
+        text_data = {
+            "text": data
+        }
     # Use json library to write text to a .json file
     with open(file_path, "w", encoding="utf-8") as f:
-        json.dump(text_data, f, indent=4)
+        json.dump(data, f, indent=4)
 
 def load_json(file_path: str) -> Dict:
     """Load data from JSON file"""
     # Load the text from the json file as a json object
     with open(file_path, "r", encoding="utf-8") as f:
-        text_data = json.load(f)
+        data = json.load(f)
     # Return the json object
-    return text_data
+    return data
 
 
 def main():

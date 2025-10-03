@@ -1,5 +1,4 @@
 # Read API keys from .env, chunk sizes, model settings
-
 import os
 from dotenv import load_dotenv
 
@@ -7,11 +6,7 @@ load_dotenv()
 
 # Configure the APIs
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
-VOYAGEAI_API_KEY = os.getenv("VOYAGEAI_API_KEY")
-
-# Chunking Configuration
-CHUNK_SIZE = 500
-CHUNK_OVERLAP = 50
+VOYAGE_API_KEY = os.getenv("VOYAGE_API_KEY")
 
 # Search Configuration
 TOP_K_RESULTS = 3

@@ -66,7 +66,8 @@ class TextChunker:
                 {
                     "chunk_id": id,
                     "source": self.file_name,
-                    "chunk_content": chunk_content
+                    "chunk_content": chunk_content,
+                    "chunking_method": self.chunk_by
                 }
             )
             
@@ -96,6 +97,7 @@ class TextChunker:
                     "chunk_id": id,
                     "source": self.file_name,
                     "chunk_content": chunk_content,
+                    "chunking_method": self.chunk_by
                 }
             )
             
@@ -110,6 +112,7 @@ class TextChunker:
             return self._character_based_fixed_size_chunking()
         else:
             return
+        
         
 def main():
     from src.document_loader import Document_Loader
