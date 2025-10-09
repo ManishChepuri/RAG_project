@@ -1,7 +1,7 @@
 # Extract text from PDFs, Word docs, etc.
 from utils.file_utils import load_pdf, load_txt, load_docx
 from pathlib import Path
-from typing import Dict
+from typing import Dict, List
 import json
 
 class DocumentLoader():
@@ -23,14 +23,20 @@ class DocumentLoader():
             return load_docx(str(path))
     
     
-    def load_all_documents(self) -> Dict[str, str]:
-        """Load all documents from the documents directory"""
+    def load_all_documents(self, file_names: List[str]) -> Dict[str, str]:
+        """Load all documents from the documents directory
+
+        Args:
+            file_names (List[str]): Name of all the files to be loaded
+
+        Returns:
+            Dict[str, str]: key of the file_name and value of the text corresponding to that file
+        """
         # We are assuming that there are no files in subdirectories of self.document_dir
         document_dict = {}
          
         # Fill document_dict with all the text from each file in self.document_dir
-        for file in Path(self.document_dir).glob("*"):
-            file_name = file.name
+        for file_name in file_names:
             document_dict[file_name] = self.load_document(file_name)
             
         # Return document_dict
@@ -38,7 +44,7 @@ class DocumentLoader():
     
     
 def main():
-    loader = Document_Loader("documents")
+    loader = DocumentLoader("documents")
     # print(json.dumps(loader.load_all_documents(), indent=4))
     print(json.dumps(loader.load_document("CSC_226_Course_Syllabus.txt")))
 

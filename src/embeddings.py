@@ -13,8 +13,9 @@ class EmbeddingSystem():
     def __init__(self):
         self._voyageai_client = voyageai.Client()
     
+    
     def get_embedding(self, text: str) -> List[float]:
-        """Get embeddings for a single peice of text (ex. user query)
+        """Get embeddings for a single peice of text (eg. user query)
 
         Args:
             text (str): text that embeddings will be created for
@@ -26,15 +27,16 @@ class EmbeddingSystem():
         
         result = self._voyageai_client.embed(text, EMBEDDING_MODEL, input_type="query")
         return result.embeddings[0]
+    
         
     def embed_chunks(self, chunks: List[Dict]) -> List[Dict]:
-        """Generate embeddings for a chunks of text
+        """Generate embeddings for chunks of text
 
         Args:
-            chunks (List[str]): a list of chunks of text
+            chunks (List[Dict]): a list of chunks of text with metadata
 
         Returns:
-            List[Dict]: list of all the embeddings paired with metadata about those embeddings
+            List[Dict]: list of all the chunks with now the embedding of that chunk
         """
         # Make a list of chunks
         chunks_content = [chunk["chunk_content"] for chunk in chunks]
@@ -43,40 +45,11 @@ class EmbeddingSystem():
         result = self._voyageai_client.embed(chunks, EMBEDDING_MODEL, input_type="query")
         
         # Make dictionary with the results
-        chunk_embeddings = []
-        for i, chunk_embedding in enumerate(result):
-            chunk_embeddings.append(
-                {
-                    "text": chunks_content[i],
-                    "chunk_id": chunks[i]["id"],
-                    "source": chunks[i]["source"],
-                    "chunking_method": chunks[i]["chunking_method"],
-                    "chunk_embedding": chunk_embedding
-                }
-            )
-        return chunk_embeddings
-        
-    def save_embeddings(self, embedded_chunks: List[Dict], file_name: str) -> None:
-        """Save the embeddings list to a file
-
-        Args:
-            embedded_chunks (List[Dict]): _description_
-            file_name (str): _description_
-        """
-        path = Path(EMBEDDINGS_DIR) / file_name
-        file_utils.save_json(embedded_chunks, str(path))
-        
-    def load_embeddings(self, file_name: str) -> List[Dict]:
-        """Load an embedding list from a file
-
-        Args:
-            file_name (str): _description_
-
-        Returns:
-            List[Dict]: _description_
-        """
-        path = Path(EMBEDDINGS_DIR) / file_name
-        return file_utils.load_json(str(path))
+        for chunk, chunk_embedding in chunks, result:
+            chunk["chunk_embeddings"] = chunk_embedding
+            
+        return chunks
+    
         
     def similarity_search(self, 
                           query: str, 
@@ -100,7 +73,7 @@ class EmbeddingSystem():
         cosine_similarity_with_chunks = cosine_similarity([query_embedding], chunk_embeddings)[0]
         
         # 3. Return top_k most similar chunks with all meta data
-        top_k_similarity_scores_idxs = np.argsort(cosine_similarity_with_chunks)[::-1][:TOP_K_RESULTS]   
+        top_k_similarity_scores_idxs = np.argsort(cosine_similarity_with_chunks)[::-1][:top_k]   
         return [embedded_chunks[i] for i in top_k_similarity_scores_idxs]
 
         

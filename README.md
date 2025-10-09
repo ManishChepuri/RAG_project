@@ -38,7 +38,7 @@ Phase 3: Search Implementation (Day 4-6)
 Goal: Build retrieval before generation
 Step 5: Embedding System
 
-Set up OpenAI API for embeddings
+Set up VoyageAI API for embeddings
 Create embeddings.py with basic embedding generation
 Implement cosine similarity from scratch (numpy dot product)
 Test: Embed 2-3 chunks, verify similarity scores make sense
