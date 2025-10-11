@@ -5,22 +5,17 @@ from typing import Dict, List
 import json
 
 class DocumentLoader():
-    def __init__(self, document_dir: str):
-        self.document_dir = document_dir
-        
-        
-    def load_document(self, file_name: str) -> str:
+    def load_document(self, file_path: str) -> str:
         """Load a single document and return text content"""
-        path = Path(self.document_dir) / file_name
+
+        if file_path.endswith(".pdf"):
+            return load_pdf(file_path)
         
-        if file_name.endswith(".pdf"):
-            return load_pdf(str(path))
+        elif file_path.endswith(".txt"):
+            return load_txt(file_path)
         
-        elif file_name.endswith(".txt"):
-            return load_txt(str(path))
-        
-        elif file_name.endswith(".docx"):
-            return load_docx(str(path))
+        elif file_path.endswith(".docx"):
+            return load_docx(file_path)
     
     
     def load_all_documents(self, file_names: List[str]) -> Dict[str, str]:
@@ -37,7 +32,7 @@ class DocumentLoader():
          
         # Fill document_dict with all the text from each file in self.document_dir
         for file_name in file_names:
-            document_dict[file_name] = self.load_document(file_name)
+            document_dict[file_name] = self.load_document(str(file_name))
             
         # Return document_dict
         return document_dict

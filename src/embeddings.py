@@ -42,10 +42,10 @@ class EmbeddingSystem():
         chunks_content = [chunk["chunk_content"] for chunk in chunks]
         
         # Make api call for the list of chunks
-        result = self._voyageai_client.embed(chunks, EMBEDDING_MODEL, input_type="query")
+        result = self._voyageai_client.embed(chunks_content, EMBEDDING_MODEL, input_type="query")
         
         # Make dictionary with the results
-        for chunk, chunk_embedding in chunks, result:
+        for chunk, chunk_embedding in zip(chunks, result.embeddings):
             chunk["chunk_embeddings"] = chunk_embedding
             
         return chunks

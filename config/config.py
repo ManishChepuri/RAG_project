@@ -11,7 +11,7 @@ VOYAGE_API_KEY = os.getenv("VOYAGE_API_KEY")
 # Search Configuration
 TOP_K_RESULTS = 3
 EMBEDDING_MODEL = "voyage-3-large"
-CLAUDE_MODEL = "claude-3-sonnet-20240229"
+CLAUDE_MODEL = "claude-sonnet-4-5-20250929"
 
 # File Paths
 DOCUMENTS_DIR = "documents"

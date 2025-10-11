@@ -1,6 +1,6 @@
 # Main RAG orchestration logic
 import anthropic
-from typing import List, Dict
+from typing import List, Dict, Optional
 from pathlib import Path
 
 from src.document_loader import DocumentLoader
@@ -15,18 +15,17 @@ class RAGSystem:
         # Initialize the anthorpic client
         self.client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
         # Initialize an object for every class we've made to help in the RAG Pipeline
-        self.document_loader = DocumentLoader(document_dir=DOCUMENTS_DIR)
+        self.document_loader = DocumentLoader()
         self.text_chunker = TextChunker()
         self.embedding_system = EmbeddingSystem()
         self.embedded_chunks = None
         
         
     def embed_documents(self, 
-                        only_include: List[str] | None, 
-                        exclude_documents: List[str] | None,
-                        chunk_by: str,
-                        chunk_size: int = None,
-                        chunk_overlap: int = None):
+                        only_include: Optional[List[str]] = None, 
+                        exclude_documents: Optional[List[str]] = None,
+                        chunk_size: Optional[int] = None,
+                        chunk_overlap: Optional[int] = None):
         """Load documents, create chunks, and calculate embeddings
 
         Args:
@@ -45,7 +44,7 @@ class RAGSystem:
         # Get how to chunk each document
         document_chunk_by = {}
         print('"c" for "Character" and "s" for "Sentence"')
-        for file_name in file_name:
+        for file_name in file_names:
             while True:
                 chunk_by = input(f"Chunk {file_name} by: ").lower().strip()
                 if chunk_by == "c":
@@ -61,12 +60,17 @@ class RAGSystem:
         # Chunk each document
         chunked_documents = []
         for file_name in file_names:
-            document_chunks = self.text_chunker.chunk_document(
-                                                file_name=file_name,
-                                                text=document_texts[file_name],
-                                                chunk_by=document_chunk_by[file_name],
-                                                chunk_size=chunk_size,
-                                                chunk_overlap=chunk_overlap)
+            kwargs = {
+                "file_name": file_name,
+                "text": document_texts[file_name],
+                "chunk_by": document_chunk_by[file_name]
+                }
+            if chunk_size:
+                kwargs["chunk_size"] = chunk_size
+            if chunk_overlap:
+                kwargs["chunk_overlap"] = chunk_overlap
+                
+            document_chunks = self.text_chunker.chunk_document(**kwargs)
             chunked_documents.extend(document_chunks)
         
         # Calculate the embeddings for each chunk in each document
@@ -78,7 +82,9 @@ class RAGSystem:
         print("-----------------------------------------------------------------------------------")
         
             
-    def _get_specified_files(self, only_include: List[str] | None, exclude_documents: List[str] | None):
+    def _get_specified_files(self, 
+                             only_include: Optional[List[str]] = None, 
+                             exclude_documents: Optional[List[str]] = None):
         # Get a list of the file name of every document in the documents directory
         file_names = []
         for file in Path(DOCUMENTS_DIR).glob("*"):
@@ -122,6 +128,7 @@ class RAGSystem:
             messages=[{"role": "user",
                        "content": prompt}]
         )
+        
         return response.content[0].text
         
 
@@ -133,7 +140,7 @@ class RAGSystem:
     def _create_prompt(self, all_chunks: str, query: str) -> str:
         return f"""
         <information>
-        Answer the following user query based on these peices of information:
+        Answer the following user query only using on these peices of information as context without using any external data:
         {all_chunks}
         
         </information>
@@ -173,4 +180,12 @@ class RAGSystem:
             
             chunk["chunk_content"] = start_chunks + " " + previous_chunks + " " + chunk["chunk_content"]
     """
-        
+
+
+def main():
+    rag_system = RAGSystem()
+    rag_system.embed_documents()
+    
+    
+if __name__ == "__main__":
+    main()

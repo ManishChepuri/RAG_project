@@ -1,6 +1,6 @@
 # Split documents into fixed-size character and sentence based chunking
 import re
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 class TextChunker:
     """
@@ -75,7 +75,13 @@ class TextChunker:
         return chunk_data
         
          
-    def chunk_document(self, file_name: str, text: str, chunk_by: str, chunk_size: int, chunk_overlap: int) -> List[Dict]:
+    def chunk_document(self, 
+                       file_name: str, 
+                       text: str, 
+                       chunk_by: str, 
+                       chunk_size: Optional[int] = None, 
+                       chunk_overlap: Optional[int] = None) -> List[Dict]:
+        
         # Check if the chunk_by is valid
         valid_chunk_by = ["character", "sentence"]
         # Raise a ValueError if chunk_by not "character" or "sentence"
@@ -83,14 +89,18 @@ class TextChunker:
             raise ValueError(f"Chunk_by must be one of {valid_chunk_by}, got {chunk_by}")
         
         # Return the text chunked by the specified method
+        kwargs = {
+            "text": text
+        }
+        if chunk_size:
+            kwargs["chunk_size"] = chunk_size
+        if chunk_overlap:
+            kwargs["chunk_overlap"] = chunk_overlap
+            
         if chunk_by == "sentence":
-            chunks = self._sentence_based_fixed_size_chunking(text=text,
-                                                            chunk_size=chunk_size,
-                                                            chunk_overlap=chunk_overlap)
+            chunks = self._sentence_based_fixed_size_chunking(**kwargs)
         elif chunk_by == "character":
-            chunks = self._character_based_fixed_size_chunking(text=text,
-                                                            chunk_size=chunk_size,
-                                                            chunk_overlap=chunk_overlap)
+            chunks = self._character_based_fixed_size_chunking(**kwargs)
         # Add meta data to each chunk
         for chunk in chunks:
             chunk["file_name"] = file_name
