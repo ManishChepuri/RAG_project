@@ -1,9 +1,12 @@
 # Entry point - run the RAG system
 # This is where you integrate embeddings_io.py
+import warnings
+warnings.filterwarnings("ignore", category=Warning)
+
 from src.rag_pipeline import RAGSystem
 
 def main():
-    print("Welcome to Manish's Mini Notebook LM")
+    print("Welcome to Manish's Mini Notebook LM!\n")
     
     # Start up the RAG pipline
     rag_system = RAGSystem()
@@ -19,7 +22,8 @@ def main():
             print("\n" + "Claude: " + answer)
             print("-" * 50)
         except Exception as e:
-            print(f"Exception: {e}")
+            pass
+            # print(f"Exception: {e}")
     
 
 if __name__ == "__main__":

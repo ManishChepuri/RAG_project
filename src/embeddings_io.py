@@ -5,7 +5,7 @@ from typing import List, Dict
 
 class EmbeddingsIO:
     @staticmethod
-    def load_embeddings(self, file_name: str) -> List[Dict]:
+    def load_embeddings(file_name: str) -> List[Dict]:
         """Load an embedding list from a file
 
         Args:
@@ -14,17 +14,19 @@ class EmbeddingsIO:
         Returns:
             List[Dict]: _description_
         """
-        path = Path(EMBEDDINGS_DIR) / file_name
+        json_file = file_name + ".json"
+        path = Path(EMBEDDINGS_DIR) / json_file
         return file_utils.load_json(str(path))
     
     
     @staticmethod
-    def save_embeddings(self, embedded_chunks: List[Dict], file_name: str) -> None:
+    def save_embeddings(embedded_chunks: List[Dict], file_name: str) -> None:
         """Save the embeddings list to a file
 
         Args:
             embedded_chunks (List[Dict]): _description_
             file_name (str): _description_
         """
-        path = Path(EMBEDDINGS_DIR) / file_name
+        json_file = file_name + ".json"
+        path = Path(EMBEDDINGS_DIR) / json_file
         file_utils.save_json(embedded_chunks, str(path))

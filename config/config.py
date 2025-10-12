@@ -9,7 +9,7 @@ ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 VOYAGE_API_KEY = os.getenv("VOYAGE_API_KEY")
 
 # Search Configuration
-TOP_K_RESULTS = 3
+TOP_K_RESULTS = 1
 EMBEDDING_MODEL = "voyage-3-large"
 CLAUDE_MODEL = "claude-sonnet-4-5-20250929"
 

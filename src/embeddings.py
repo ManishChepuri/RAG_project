@@ -7,6 +7,9 @@ from typing import List, Dict
 from pathlib import Path
 from utils import file_utils
 import numpy as np
+import time
+import json
+from src.embeddings_io import EmbeddingsIO
 
 
 class EmbeddingSystem():
@@ -30,7 +33,7 @@ class EmbeddingSystem():
     
         
     def embed_chunks(self, chunks: List[Dict]) -> List[Dict]:
-        """Generate embeddings for chunks of text
+        """Generate embeddings for chunks of text from one or more files
 
         Args:
             chunks (List[Dict]): a list of chunks of text with metadata
@@ -38,15 +41,60 @@ class EmbeddingSystem():
         Returns:
             List[Dict]: list of all the chunks with now the embedding of that chunk
         """
-        # Make a list of chunks
-        chunks_content = [chunk["chunk_content"] for chunk in chunks]
+        BATCH_SIZE = 1
         
-        # Make api call for the list of chunks
-        result = self._voyageai_client.embed(chunks_content, EMBEDDING_MODEL, input_type="query")
+        # Get a list of all file_names saved in the embeddings
+        embeddings_list_of_files = [str(file.name) for file in Path(EMBEDDINGS_DIR).glob("*")]
+        print(embeddings_list_of_files)
+        # Iterate through all the chunks. 
+        file_embeddings_to_import = set()
+        chunks_to_embed = []
+        chunks_content = []
+        for chunk in chunks:
+            # If the file the chunk is from IS NOT in the embeddings_list_of_files, 
+            # then add that to chunks_content. We will embed these.
+            if chunk["file_name"] + ".json" not in embeddings_list_of_files:
+                chunks_to_embed.append(chunk)
+                chunks_content.append(chunk["chunk_content"])
+            # If the file IS in the embeddings_list_of_files then add it to the
+            # set `file_embeddings_to_import`
+            else:
+                # Keep track of files that already exist
+                file_embeddings_to_import.add(chunk["file_name"])
+
+        # Embed the chunks that need to be embedded, in batches.
+        embedding_results = []
+        for i in range(0, len(chunks_to_embed), BATCH_SIZE):
+            input_chunks = chunks_content[i:i+BATCH_SIZE]
+            print(f"Embedding up to chunk {i+len(input_chunks)}/{len(chunks_content)}")
+            
+            # Make the API call for the list of chunks
+            result = self._voyageai_client.embed(input_chunks, EMBEDDING_MODEL, input_type="query")
+            embedding_results.extend(result.embeddings)
+            
+            # Pause for 60 seconds to reset TPM
+            if i + BATCH_SIZE < len(chunks_content):
+                print("Sleeping for 60 seconds to reset tokens and embed new batch...")
+                time.sleep(60)
         
-        # Make dictionary with the results
-        for chunk, chunk_embedding in zip(chunks, result.embeddings):
-            chunk["chunk_embeddings"] = chunk_embedding
+        # Add a key value pair to each index of chunks_to_embed that 
+        # contains that chunk's embeddings
+        for chunk, embedding in zip(chunks_to_embed, embedding_results):
+            chunk["chunk_embeddings"] = embedding
+           
+        # Save the embedded chunks to a file with the file they belong to
+        unique_files = {chunk["file_name"] for chunk in chunks_to_embed}
+        j = 0
+        for file_name in unique_files:
+            file_chunks_to_save = []
+            while j < len(chunks_to_embed) and chunks_to_embed[j]["file_name"] == file_name:
+                file_chunks_to_save.append(chunks_to_embed[j])
+                j += 1
+            EmbeddingsIO.save_embeddings(file_chunks_to_save, file_name)
+                    
+        # Import any files that already have their embeddings in the embeddings dir
+        for file_name in file_embeddings_to_import:
+            chunks.extend(EmbeddingsIO.load_embeddings(file_name))
             
         return chunks
     

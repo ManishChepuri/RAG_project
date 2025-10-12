@@ -3,6 +3,7 @@ from utils.file_utils import load_pdf, load_txt, load_docx
 from pathlib import Path
 from typing import Dict, List
 import json
+from config.config import DOCUMENTS_DIR
 
 class DocumentLoader():
     def load_document(self, file_path: str) -> str:
@@ -32,7 +33,8 @@ class DocumentLoader():
          
         # Fill document_dict with all the text from each file in self.document_dir
         for file_name in file_names:
-            document_dict[file_name] = self.load_document(str(file_name))
+            file_path = str(Path(DOCUMENTS_DIR) / file_name)
+            document_dict[file_name] = self.load_document(file_path)
             
         # Return document_dict
         return document_dict

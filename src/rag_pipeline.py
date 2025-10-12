@@ -36,17 +36,17 @@ class RAGSystem:
         file_names = self._get_specified_files(only_include, exclude_documents)
         
         # Load the documents
-        print("----Getting Text From Documents----")
+        #print("----Getting Text From Documents----")
         document_texts = self.document_loader.load_all_documents(file_names=file_names)
         
         # Create the chunks for each document
-        print("----Chunking Documents----")
+        #print("----Chunking Documents----")
         # Get how to chunk each document
         document_chunk_by = {}
-        print('"c" for "Character" and "s" for "Sentence"')
+        print('Press "c" for "Character" and "s" for "Sentence"')
         for file_name in file_names:
             while True:
-                chunk_by = input(f"Chunk {file_name} by: ").lower().strip()
+                chunk_by = input(f"Chunk '{file_name}' by: ").lower().strip()
                 if chunk_by == "c":
                     chunk_by = "character"
                     break
@@ -74,7 +74,7 @@ class RAGSystem:
             chunked_documents.extend(document_chunks)
         
         # Calculate the embeddings for each chunk in each document
-        print("----Calculating Embeddings----")
+        #print("----Calculating Embeddings----")
         self.embedded_chunks = self.embedding_system.embed_chunks(chunked_documents)
         
         print("-----------------------------------------------------------------------------------")
@@ -88,7 +88,7 @@ class RAGSystem:
         # Get a list of the file name of every document in the documents directory
         file_names = []
         for file in Path(DOCUMENTS_DIR).glob("*"):
-            file_names.append(file)
+            file_names.append(file.name)
             
         # Exclude the specified documents that were inputted
         if exclude_documents:
@@ -140,7 +140,7 @@ class RAGSystem:
     def _create_prompt(self, all_chunks: str, query: str) -> str:
         return f"""
         <information>
-        Answer the following user query only using on these peices of information as context without using any external data:
+        Answer the following user query only using on these peices of information as context without using any external data. SUMMARIZE YOUR ANSWER. DO NOT QUOTE THE SOURCES:
         {all_chunks}
         
         </information>

@@ -5,6 +5,7 @@ from pathlib import Path
 from pypdf import PdfReader
 from docx import Document
 from typing import Dict
+from config.config import DOCUMENTS_DIR
 
 def ensure_directory_exists(directory_path):
     """Create directory if it doesn't exist"""
@@ -58,7 +59,7 @@ def load_json(file_path: str) -> Dict:
 
 
 def main():
-    pdf_text = load_pdf("documents/Manish_Chepuri_Resume.pdf")
+    pdf_text = load_pdf("Manish_Chepuri_Resume.pdf")
     save_json(pdf_text, "data/data.json")
     print(type(load_json("data/data.json")))
     
