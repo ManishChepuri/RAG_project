@@ -1,85 +1,74 @@
-# Rag_Project
+# Document Q&A System with Retrieval Augmented Generation (RAG)
+A document search and question-answering system that uses VoyageAI embeddings and Claude to decrease hallucinations when answering questions from a personal document collection.
 
-Project associated with Section 5 of the official Anthropic Course.
+## Project Overview
+This RAG (Retrieval Augmented Generation) system allows you to:
 
+Upload personal documents (PDFs, Word docs, text files)
+Ask natural language questions about your documents
+Get AI-powered answers with relevant context from your documents
+Search across multiple documents simultaneously
 
-## Project Learning Roadmap
-Phase 1: Foundation & Setup (Day 1-2)
-Goal: Get basic infrastructure working before complexity
-Step 1: Document Preparation
+The system uses semantic search with embeddings to find relevant information and Claude AI to generate accurate, context-aware answers.
 
-Gather your 3-5 documents (PDFs, Word docs, text files)
-Create document_loader.py first
-Test: Can you extract text from each document type?
+## Key Components
+Key Components:
 
-Step 2: Basic Text Processing
+Document Loader: Extracts text from PDFs, .docx, and .txt files
+Text Chunker: Splits documents into manageable pieces (500 characters with 50 character overlap)
+Embedding System: Converts text chunks into vector embeddings for semantic search
+RAG Pipeline: Orchestrates retrieval and generation to answer queries
+Claude Integration: Uses Anthropic's Claude for natural language generation
 
-Create utils/text_processing.py for cleaning text
-Test: Clean text from one document manually
+## Secrets and Prerequisites
+Python 3.8 or higher
+Anthropic API key (for Claude)
+OpenAI API key (for embeddings) or Voyage AI account
 
-Why this order: You need clean text before you can chunk it. Start simple.
-Phase 2: Chunking Foundation (Day 2-3)
-Goal: Understand how text splitting affects retrieval
-Step 3: Fixed-Size Chunking
+## Run the program
+### Installation
 
-Implement basic chunking in chunker.py
-Start with just character-based splitting
-Save chunks to data/chunks/ as JSON
-Test: Print chunks from one document, verify they make sense
+1. **Clone the repository**
+```bash
+   git clone https://github.com/YOUR_USERNAME/rag_project.git
+   cd rag_project
+```
 
-Step 4: Chunk Analysis
+2. **Create a virtual environment**
+```bash
+   python -m venv rag_project_env
+   
+   # Activate (Windows)
+   rag_project_env\Scripts\activate
+   
+   # Activate (Mac/Linux)
+   source rag_project_env/bin/activate
+```
 
-Create notebook experiments/chunk_size_testing.ipynb
-Try different chunk sizes (300, 500, 800 chars)
-Manually read chunks - which size preserves meaning best?
+3. **Install dependencies**
+```bash
+   pip install -r requirements.txt
+```
 
-Why this order: Fixed chunking is simpler than semantic. You need to see bad chunking to appreciate good chunking.
-Phase 3: Search Implementation (Day 4-6)
-Goal: Build retrieval before generation
-Step 5: Embedding System
+4. **Set up environment variables**
+   
+   Create a `.env` file in the project root:
+```env
+   ANTHROPIC_API_KEY=your_anthropic_key_here
+   OPENAI_API_KEY=your_openai_key_here
+```
 
-Set up VoyageAI API for embeddings
-Create embeddings.py with basic embedding generation
-Implement cosine similarity from scratch (numpy dot product)
-Test: Embed 2-3 chunks, verify similarity scores make sense
+5. **Add your documents**
+   
+   Place your documents in the `documents/` folder:
+   - Supported formats: `.pdf`, `.txt`, `.docx`
+   - Recommended: 3-5 documents to start (2-10 pages each)
 
-Step 6: Basic Search
+### Running the System
 
-Build simple query → retrieve relevant chunks pipeline
-No LLM yet - just return the most similar chunks
-Test: Query "What is [topic]?" and see if right chunks come back
+**Basic usage:**
+```bash
+python main.py
+```
 
-Step 7: BM25 Implementation
-
-Create bm25.py with term frequency approach
-Build side-by-side comparison: embedding vs BM25 results
-Test: Same queries, different results - which makes more sense?
-
-Why this order: Retrieval is the hard part of RAG. Get this working before adding LLM complexity.
-Phase 4: RAG Pipeline (Day 7-8)
-Goal: Connect retrieval to generation
-Step 8: Claude Integration
-
-Create rag_pipeline.py
-Simple flow: query → retrieve chunks → send to Claude with context
-Test: Ask one question, get one good answer
-
-Step 9: Pipeline Refinement
-
-Add query processing (clean user input)
-Improve context assembly (how do you combine chunks?)
-Add basic logging to debug what's happening
-
-Phase 5: Advanced Features (Day 9-10)
-Goal: Add sophistication
-Step 10: Multi-Index System
-
-Separate indexes by document type or topic
-Simple routing logic based on keywords
-Test: Route queries to correct document sets
-
-Step 11: Reranking
-
-Use Claude to score chunk relevance (1-10)
-Re-order results before final answer generation
-Test: Does reranking improve answer quality?
+Use 'quit' to exit.
