@@ -4,26 +4,26 @@ A document search and question-answering system that uses VoyageAI embeddings an
 ## Project Overview
 This RAG (Retrieval Augmented Generation) system allows you to:
 
-Upload personal documents (PDFs, Word docs, text files)
-Ask natural language questions about your documents
-Get AI-powered answers with relevant context from your documents
-Search across multiple documents simultaneously
+- Upload personal documents (PDFs, Word docs, text files)
+- Ask natural language questions about your documents
+- Get AI-powered answers with relevant context from your documents
+- Search across multiple documents simultaneously
 
 The system uses semantic search with embeddings to find relevant information and Claude AI to generate accurate, context-aware answers.
 
 ## Key Components
 Key Components:
 
-Document Loader: Extracts text from PDFs, .docx, and .txt files
-Text Chunker: Splits documents into manageable pieces (500 characters with 50 character overlap)
-Embedding System: Converts text chunks into vector embeddings for semantic search
-RAG Pipeline: Orchestrates retrieval and generation to answer queries
-Claude Integration: Uses Anthropic's Claude for natural language generation
+- Document Loader: Extracts text from PDFs, .docx, and .txt files
+- Text Chunker: Splits documents into manageable pieces (500 characters with 50 character overlap)
+- Embedding System: Converts text chunks into vector embeddings for semantic search
+- RAG Pipeline: Orchestrates retrieval and generation to answer queries
+- Claude Integration: Uses Anthropic's Claude for natural language generation
 
 ## Secrets and Prerequisites
-Python 3.8 or higher
-Anthropic API key (for Claude)
-OpenAI API key (for embeddings) or Voyage AI account
+- Python 3.8 or higher
+- Anthropic API key (for Claude)
+- OpenAI API key (for embeddings) or Voyage AI account
 
 ## Run the program
 ### Installation
@@ -72,3 +72,7 @@ python main.py
 ```
 
 Use 'quit' to exit.
+
+## Features to be Added
+- BM25
+- Giving Claude ability to rerank retrieved chunks
