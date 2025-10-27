@@ -71,7 +71,7 @@ Key Components:
 python main.py
 ```
 
-Use 'quit' to exit.
+Use `quit` to exit.
 
 ## Features to be Added
 - BM25
